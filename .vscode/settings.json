@@ -1,3 +1,9 @@
 {
-    "cmake.sourceDirectory": "C:/Users/Adji/Documents/Kuliah/Skripsi/aplikasi/hairstyle_app/linux"
+    "cmake.sourceDirectory": "C:/Users/Adji/Documents/Kuliah/Skripsi/aplikasi/hairstyle_app/linux",
+    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.files.exclude": [
+        "**/.vscode",
+        "**/.vs",
+        "linux/**"
+    ]
 }

@@ -1,6 +1,6 @@
-# hairstyle_app
+# StyleRambut
 
-A new Flutter project.
+A Flutter app for hairstyle recommendations.
 
 ## Getting Started
 
