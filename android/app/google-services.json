@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1031932278401",
+    "project_id": "hairstyle-skripsi",
+    "storage_bucket": "hairstyle-skripsi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031932278401:android:43b75c476ba0c2b9237f80",
+        "android_client_info": {
+          "package_name": "com.example.hairstyle_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmgOjWfpl9IqqZyx_jIX0pVjGamcaqKzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
