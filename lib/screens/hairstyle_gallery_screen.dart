@@ -161,7 +161,7 @@ class _HairstyleGridTile extends StatelessWidget {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                color: Color(0xFFD4B483),
+                color: Color(0xFFFFC107),
                 fontSize: 11,
                 fontWeight: FontWeight.w600,
                 height: 1.2,
@@ -327,7 +327,7 @@ class _HairstyleDetailDialog extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () => Navigator.of(context).pop(),
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFE8D5B5),
+              backgroundColor: const Color(0xFFFFC107),
               foregroundColor: Colors.black,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               shape: RoundedRectangleBorder(

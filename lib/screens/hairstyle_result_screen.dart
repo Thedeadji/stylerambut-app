@@ -444,7 +444,7 @@ class _RecommendationCard extends StatelessWidget {
           const SizedBox(height: 12),
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Container(
+            child: SizedBox(
               height: 200,
               child: item.imageAsset != null
                   ? Image.asset(

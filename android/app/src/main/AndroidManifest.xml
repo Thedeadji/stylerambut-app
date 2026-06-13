@@ -9,7 +9,7 @@
     <application
         android:label="StyleRambut"
         android:name="${applicationName}"
-        android:icon="@mipmap/app_logo"
+        android:icon="@mipmap/launcher_icon"
         android:requestLegacyExternalStorage="true">
         <activity
             android:name=".MainActivity"

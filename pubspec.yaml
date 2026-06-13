@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_native_splash: ^2.4.7
+  flutter_launcher_icons: ^0.13.1
   firebase_core: ^4.6.0
   firebase_auth: ^6.3.0
   camera: ^0.11.0
@@ -87,6 +88,12 @@ flutter:
     - assets/image/hairstyle/slick_back/
     - assets/image/hairstyle/textured_crop/
     - assets/image/hairstyle/undercut/
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/app_logo.png" # <--- Sesuaikan dengan nama dan folder file kamu
+  min_sdk_android: 21 # android min sdk warns when below 21
 
   # To add assets to your application, add an assets section, like this:
   # assets:
