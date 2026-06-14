@@ -38,7 +38,13 @@ class _DetectionScreenState extends State<DetectionScreen>
   void dispose() {
     _disposed = true;
     WidgetsBinding.instance.removeObserver(this);
-    _cameraController?.dispose();
+    final controller = _cameraController;
+    if (controller != null) {
+      _cameraController = null;
+      controller.dispose().catchError((Object e) {
+        debugPrint('Error disposing camera controller: $e');
+      });
+    }
     super.dispose();
   }
 
@@ -68,7 +74,11 @@ class _DetectionScreenState extends State<DetectionScreen>
     } catch (_) {
       // ignore if preview is already stopped or not available
     }
-    await controller.dispose();
+    try {
+      await controller.dispose();
+    } catch (e) {
+      debugPrint('Error disposing camera controller in pause: $e');
+    }
   }
 
   Future<void> _resumeCamera() async {
@@ -162,7 +172,13 @@ class _DetectionScreenState extends State<DetectionScreen>
       });
     }
 
-    await previousController?.dispose();
+    if (previousController != null) {
+      try {
+        await previousController.dispose();
+      } catch (e) {
+        debugPrint('Error disposing previous camera controller: $e');
+      }
+    }
     if (!mounted) return;
 
     final controller = CameraController(
@@ -180,7 +196,11 @@ class _DetectionScreenState extends State<DetectionScreen>
         },
       );
       if (!mounted) {
-        await controller.dispose();
+        try {
+          await controller.dispose();
+        } catch (e) {
+          debugPrint('Error disposing camera controller after unmount: $e');
+        }
         return;
       }
 
@@ -205,14 +225,22 @@ class _DetectionScreenState extends State<DetectionScreen>
         _cameraError = null;
       });
     } on CameraException catch (exception) {
-      await controller.dispose();
+      try {
+        await controller.dispose();
+      } catch (e) {
+        debugPrint('Error disposing camera controller after exception: $e');
+      }
       if (!mounted) return;
       setState(() {
         _cameraError = exception.description ?? exception.code;
         _isInitialized = false;
       });
     } catch (error) {
-      await controller.dispose();
+      try {
+        await controller.dispose();
+      } catch (e) {
+        debugPrint('Error disposing camera controller after error: $e');
+      }
       if (!mounted) return;
       setState(() {
         _cameraError = error.toString();
@@ -310,7 +338,11 @@ class _DetectionScreenState extends State<DetectionScreen>
       } catch (_) {
         // ignore if preview is already paused
       }
-      await controller.dispose();
+      try {
+        await controller.dispose();
+      } catch (e) {
+        debugPrint('Error disposing camera controller in openConfirmScreen: $e');
+      }
     }
 
     if (!mounted) return;
