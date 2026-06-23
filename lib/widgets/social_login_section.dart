@@ -44,21 +44,23 @@ class SocialLoginSection extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         _SocialButton(label: 'Guest', onPressed: onGuest),
-        const SizedBox(height: 12),
-        _SocialButton(
-          label: 'Google',
-          icon: Image.asset(
-            'assets/icon/googlelogo.png',
-            width: 20,
-            height: 20,
-            errorBuilder: (context, error, stackTrace) => const Icon(
-              Icons.g_mobiledata,
-              color: Colors.black87,
-              size: 24,
+        if (onGoogle != null) ...[
+          const SizedBox(height: 12),
+          _SocialButton(
+            label: 'Google',
+            icon: Image.asset(
+              'assets/icon/googlelogo.png',
+              width: 20,
+              height: 20,
+              errorBuilder: (context, error, stackTrace) => const Icon(
+                Icons.g_mobiledata,
+                color: Colors.black87,
+                size: 24,
+              ),
             ),
+            onPressed: onGoogle!,
           ),
-          onPressed: onGoogle ?? () {},
-        ),
+        ],
       ],
     );
   }
@@ -90,10 +92,7 @@ class _SocialButton extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                if (icon != null) ...[
-                  icon!,
-                  const SizedBox(width: 10),
-                ],
+                if (icon != null) ...[icon!, const SizedBox(width: 10)],
                 Text(
                   label,
                   style: const TextStyle(
